@@ -1,0 +1,60 @@
+.modalBlock {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    z-index: 9;
+    overflow-y: auto;
+}
+
+.modalBlock .backdrop {
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.6;
+}
+.modalBlock .modalWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+.modalBlock .modalContent {
+    margin: 0 auto;
+    background: #FFF;
+    position: relative;
+    z-index: 2;
+    padding: 35px;
+    max-width: 880px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.modalClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 34px;
+    height: 34px;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQiIGhlaWdodD0iMzQiIHZpZXdCb3g9IjAgMCAzNCAzNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGxpbmUgeDE9IjguNjkyNDYiIHkxPSI4LjMyNzgxIiB4Mj0iMjUuNjYzIiB5Mj0iMjUuMjk4NCIgc3Ryb2tlPSIjMDc0NjdBIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjI1LjY2NDEiIHkxPSI4Ljc0MzM2IiB4Mj0iOC42OTM1NyIgeTI9IjI1LjcxMzkiIHN0cm9rZT0iIzA3NDY3QSIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvc3ZnPgo=);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.modalBlock .titleModal {
+    font-size: 22px;
+    line-height: 28px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 500;
+}

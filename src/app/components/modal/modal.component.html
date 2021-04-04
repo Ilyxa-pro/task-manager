@@ -1,0 +1,13 @@
+<div class="modalBlock">
+  <div class="backdrop" (click)="closeModal.emit()"></div>
+  <div class="modalWrapper">
+    <div class="modalContent">
+      <div class="modalClose" title="close" (click)="closeModal.emit()"></div>
+      <div class="titleModalBlock">
+        <div class="titleModal" >{{title}}</div>
+      </div>
+      <ng-content>
+      </ng-content>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.tasksList {
+    margin-bottom: -20px;
+}
+app-task-item {
+    margin-bottom: 20px;
+    display: block;
+}
+app-task-item {
+    border-radius: 10px;
+    position: relative;
+}
+
+.colorDeadlineList {
+    padding: 0;
+    margin: 5px 0 30px;
+}
+
+.colorDeadlineList .item {
+    padding: 0;
+    margin: 0 0 5px 0;
+    display: block;
+    font-weight: bold;
+}
+.colorDeadlineList .item.normal {
+    color: #519839;
+}
+.colorDeadlineList .item.expiring {
+    color: #d9b51c;
+}
+.colorDeadlineList .item.expired {
+    color: #b04632;
+}

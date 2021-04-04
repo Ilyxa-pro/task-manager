@@ -1,0 +1,110 @@
+.submitsBlock {
+  display: flex;
+  margin-left: -20px;
+  margin-bottom: -20px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.submitBlock {
+  padding-left: 20px;
+  flex: 1;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+.submitBlock .submit {
+  outline: none;
+  padding: 5px 15px;
+  background: #40ff7b;
+  border: 0;
+  border-radius: 4px;
+  line-height: 20px;
+  font-weight: bold;
+  width: 100%;
+  min-width: 200px;
+  cursor: pointer;
+  transition: 0.4s all linear;
+}
+.submitBlock .submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+.submitBlock .submit:not(:hover).submit-remove {
+  background-color: #ffd740;
+}
+
+.fieldListBlock {
+  margin-bottom: 50px;
+}
+.fieldListBlock > .submitsBlock, .fieldListBlock > .submitBlock {
+  margin-top: 30px;
+}
+
+.fieldList {
+  padding-left: 0;
+  margin: 0 0 -20px -20px;
+}
+.fieldList .field {
+  display: block;
+  padding: 0 0 0 20px;
+  box-sizing: border-box;
+  margin: 0 0 20px 0;
+}
+.fieldList .field .fieldWrapper .wrap {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.fieldList .field .caption {
+  width: 100%;
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.fieldList .field .dateBlock {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fieldList .field .dateBlock .mat-icon-button {
+  height: 32px;
+  line-height: 32px;
+  width: 32px;
+}
+
+input, textarea {
+  padding: 5px 15px;
+  line-height: 20px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+textarea {
+  resize: none;
+  height: 75px;
+}
+
+.errorsBlock {
+  display: block;
+}
+.errorsBlock .error {
+  display: block;
+  margin-top: 5px;
+  color: red;
+}
+
+#page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */

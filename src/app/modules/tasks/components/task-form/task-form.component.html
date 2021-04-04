@@ -1,0 +1,66 @@
+<form class="fieldListBlock" [formGroup]="form" (ngSubmit)="taskSubmit()">
+  <h2 *ngIf="title">Create new task</h2>
+  <ul class="fieldList">
+    <li class="field">
+      <div class="fieldWrapper">
+        <label class="wrap">
+          <span class="caption">Name task</span>
+          <input type="text" name="title" formControlName='title' placeholder="An important task">
+        </label>
+        <span class="errorsBlock" *ngIf="form.get('title').invalid && form.get('title').touched">
+          <small class="error" *ngIf="form.get('title').errors.required">
+            Should not be empty
+          </small>
+        </span>
+      </div>
+    </li>
+    <li class="field">
+      <div class="fieldWrapper">
+        <label class="wrap">
+          <span class="caption">Description Task</span>
+          <textarea type="text" name="description" formControlName='description'
+                    placeholder="do a test task"></textarea>
+        </label>
+      </div>
+    </li>
+    <li class="field">
+      <div class="fieldWrapper">
+        <label class="wrap">
+          <span class="caption">Deadline</span>
+          <span class="dateBlock">
+            <input matInput [min]="minDate" [max]="maxDate" formControlName='deadline' name="deadline"
+                   [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </span>
+        </label>
+        <span class="errorsBlock" *ngIf="form.get('deadline').invalid && form.get('deadline').touched">
+          <small class="error" *ngIf="form.get('deadline').errors.dateNotCorrected">
+            Enter the date in the format 12.01.2021
+          </small>
+          <small class="error" *ngIf="form.get('deadline').errors.matDatepickerMax">
+            Maximum valid date is {{maxDate.getMonth() + '.' + maxDate.getDay() + '.' + maxDate.getFullYear()}}, change the date
+          </small>
+        </span>
+      </div>
+    </li>
+    <li class="field">
+      <div class="fieldWrapper">
+        <label class="wrap">
+          <span class="caption">Deadline</span>
+          <span class="dateBlock">
+            <input type="time" formControlName='time' value="00:00" name="time">
+          </span>
+        </label>
+      </div>
+    </li>
+  </ul>
+  <div class="submitsBlock">
+    <div class="submitBlock">
+      <button type="reset" class="submit submit-remove">Refresh</button>
+    </div>
+    <div class="submitBlock">
+      <button class="submit" [disabled]="!form.valid" [innerHTML]="idx !== null ? 'Update':'Create'"></button>
+    </div>
+  </div>
+</form>

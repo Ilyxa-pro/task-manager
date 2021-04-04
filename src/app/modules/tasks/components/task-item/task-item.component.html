@@ -1,0 +1,19 @@
+<div class="taskWrapper"
+     [class.complete]="complete"
+     [ngClass]="!status ? 'normal' : status === 1 ? 'expiring' : 'expired'">
+  <div class="title" (click)="setStateDescription()">{{title}}</div>
+  <div class="description" [hidden]="!stateDescription">Description: {{description}}</div>
+  <div class="deadline">Deadline: {{deadline | date : 'M/d/yy, h:mm a'}}</div>
+  <div class="submitsBlock">
+    <div class="submitBlock">
+      <button class="submit" (click)="completeChange()" [innerHTML]="complete ? 'Resume' : 'Complete'"></button>
+    </div>
+    <div class="submitBlock">
+      <button class="submit submit-remove" (click)="editInfo(index)">Edit</button>
+    </div>
+  </div>
+  <div class="directions">
+    <button class="direction direction-up" [hidden]="index === 0" (click)="editDirection(index, 0)">up</button>
+    <button class="direction direction-down" [hidden]="last" (click)="editDirection(index, 1)">down</button>
+  </div>
+</div>

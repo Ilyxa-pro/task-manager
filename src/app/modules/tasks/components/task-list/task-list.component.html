@@ -1,0 +1,26 @@
+<div class="tasksListBlock" *ngIf="tasks" [class.loading]="loading">
+  <h2>List tasks:</h2>
+  <div class="tasksList" *ngIf="tasks.length">
+    <p><strong>Description opens</strong> when you click on the title</p>
+    <p>Colors deadline:</p>
+    <ul class="colorDeadlineList">
+      <li class="item normal"><div>Task expiration date > 3 day</div></li>
+      <li class="item expiring"><div>Task expiration date <= 3 day</div></li>
+      <li class="item expired"><div>Task is overdue</div></li>
+    </ul>
+    <app-task-item *ngFor="let el of tasks; index as idx;"
+                   [title]="el.title"
+                   [description]="el.description"
+                   [deadline]="el.deadline"
+                   [complete]="el.complete"
+                   [status]="el.status"
+                   [index]="idx"
+                   [last]="tasks.length - 1 === idx"
+                   (edit)="editTask($event)"
+    ></app-task-item>
+  </div>
+  <p *ngIf="!tasks.length">Список задач пуст</p>
+</div>
+<ng-template appRef>
+</ng-template>
+
